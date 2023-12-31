@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ texts.login_page_title }}</title>
+    <style>
+        form,h1
+         {
+            margin-left: 100px;
+        }
+
+        body {
+            background-color: rgb(189, 183, 183);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ texts.login_page_title }}</h1>
+
+    {% if error %}
+    <p><strong>{{ texts.error }}:</strong> {{ error }}
+    {% endif %}
+
+    <form action="" method="post">
+        <dl>
+            <dt>{{ texts.username_label }}</dt>
+            <dd>
+                <input type="text" name="username" value="{{ request.form.username }}">
+            </dd>
+            <dt>{{ texts.password_label }}</dt>
+            <dd><input type="password" name="password"></dd>
+        </dl>
+        <p><input type="submit" value="{{ texts.login_button }}"></p>
+    </form>
+</body>
+
+</html>

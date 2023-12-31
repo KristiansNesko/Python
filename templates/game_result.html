@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  h1,p{
+     margin-left: 100px;
+  }
+  body{
+       background-color: rgb(189, 183, 183);
+  }
+  .btn{
+    display: flex;
+    margin-left: 100px;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .stats{
+    margin-right: 10px;
+    color: blueviolet;
+    font-size: 20px;
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Result</title>
+</head>
+<body>
+    <h1>{{ texts.hello_player}} {{ player_name }}!</h1>
+    <p>{{ texts.hello_player}} {{ player_name }}!</p>
+    <p>You lost {{ x }} life points and gained {{ y }} combat points.</p>
+    <p>You gained {{ y }} combat points.</p>
+    <p>{{ texts.current_life_points }} {{ player_life_points }}</p>
+    <p>{{ texts.current_combat_points }} {{ player_combat_points }}</p>
+    <p>{{ texts.current_experience_points }} {{ player_experience_points }}</p>
+    <div class="btn">
+    <a class="stats" href="{{ url_for('stats') }}">{{ texts.see_stats}}</a>
+    <form method="post" action="{{ url_for('game') }}">
+      <button><a href="{{ url_for('game') }}">{{ texts.leave }}</a></button>
+      <button type="submit" name="action" value="fight">{{ texts.fight_again }}</button>
+    </form>
+    </div>       
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  form,h1,p{
+      margin-left: 100px;
+  }
+  body{
+       background-color: rgb(189, 183, 183);
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ texts.game_page_title }}</title>
+</head>
+<body>
+    <h1>{{ texts.game_page_title }}</h1>
+
+    <form method="post" action="{{ url_for('game') }}">
+        <button type="submit" name="action" value="fight">{{ texts.fight_button }}</button>
+        <button type="submit" name="action" value="stats">{{ texts.stats_button }}</button>
+        <button type="submit" name="action" value="logout">{{ texts.logout_button }}</button>
+    </form>
+
+    <p>{{ texts.level }}: {{ player_level }}</p>
+    <p>{{ texts.exp_points }}: {{ player_experience_points }}</p>
+    <p>{{ texts.GP }}: {{ player_games_played }}</p>
+
+</body>
+</html>
